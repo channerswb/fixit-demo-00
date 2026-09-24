@@ -1,0 +1,53 @@
+/* =========================================================
+   DESIGN TOKENS
+   The single source of truth for colour, type and spacing.
+   Names match the variables in our Figma file, so design and
+   code speak the same language. Change a value here and it
+   updates everywhere.
+   ========================================================= */
+
+:root {
+  /* Colour: brand (charcoal, grey, white) */
+  --color-primary: #1f2328;        /* Figma: color/primary. Charcoal, 15.8:1 on white */
+  --color-primary-hover: #3a3f46;  /* Figma: color/primary-hover */
+  --color-primary-tint: #eef0f2;   /* Figma: color/primary-tint (selected states) */
+  --color-primary-line: #aeb3ba;   /* Figma: color/primary-line */
+
+  /* Colour: neutrals */
+  --color-text: #1f2328;
+  --color-text-muted: #555b63;     /* grey, 6.9:1 on white, still passes on the page background */
+  --color-surface: #ffffff;
+  --color-background: #f3f4f6;
+  --color-border: #d0d4d9;
+
+  /* Colour: feedback. Kept in colour on purpose: urgency and status
+     shouldn't rely on grey alone to be noticed. */
+  --color-urgent-bg: #fff4d6;
+  --color-urgent-line: #f0c35a;
+  --color-urgent-text: #5c4300;
+  --color-success-bg: #e7f5ee;
+  --color-success-text: #135c3a;
+  --color-focus: #1f2328;
+
+  /* Typography */
+  --font-body: "Inter", "Open Sans", system-ui, sans-serif;
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.75rem;   /* 28px */
+  --font-size-xxl: 2.25rem;  /* 36px */
+  --line-height: 1.5;
+
+  /* Spacing: an 8px scale, same as the Figma layout grid */
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-6: 3rem;     /* 48px */
+
+  /* Shape and size */
+  --radius-sm: 6px;    /* inputs, buttons */
+  --radius-lg: 12px;   /* panels */
+  --tap-target: 48px;  /* minimum height for anything you can press */
+  --max-width: 34rem;  /* one readable column, like the Figma frames */
+}

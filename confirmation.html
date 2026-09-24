@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report received | FixIt</title>
+  <!-- Font: Inter, an open typeface designed for screens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <!-- Load order matters: tokens first, components last -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="logo" href="index.html">FixIt</a>
+      <a class="site-header-end" href="my-reports.html">My reports</a>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <h1>Report received</h1>
+    <p class="lede">Thanks for looking after our city.</p>
+
+    <div class="reference">
+      <p class="reference-label">Your reference</p>
+      <p class="reference-code">FX-20481</p>
+      <p class="field-hint">Quote this if you contact Council about this report.</p>
+    </div>
+
+    <p><span class="badge">Received</span></p>
+    <p>Broken streetlight<br>24 Queen Street, Auckland Central<br>Sent 24 September 2026</p>
+
+    <h2>What happens next</h2>
+    <ol class="next-steps">
+      <li>Council reviews your report.</li>
+      <li>The right team assesses and prioritises it.</li>
+      <li>We'll email you with updates or questions.</li>
+    </ol>
+    <p class="field-hint">Response times depend on the issue and how urgent it is. This service isn't monitored for emergencies.</p>
+
+    <div class="button-stack">
+      <a class="btn btn-primary btn-block" href="my-reports.html">View my reports</a>
+      <a class="btn btn-secondary btn-block" href="index.html">Report another issue</a>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

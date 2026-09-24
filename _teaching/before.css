@@ -1,0 +1,31 @@
+/* TEACHING EXAMPLE: CSS written WITHOUT shared conventions.
+   Three people, three habits. Spot the problems:
+   - the "same" charcoal written three different ways
+   - spacing values picked by eye (9px, 13px, 15px, 22px)
+   - class names describe looks, not purpose
+   - an id used for styling, so it can't be reused */
+
+#submitBtn {
+  background: #1f2328;
+  padding: 9px 22px;
+  border-radius: 6px;
+  color: white;
+}
+
+.darkButton {
+  background-color: rgb(33, 35, 40);
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.big-text-2 {
+  font-size: 17px;
+  color: #222; /* close enough? */
+  margin-bottom: 13px;
+}
+
+.cardThing {
+  padding: 15px;
+  border: 1px solid #ccc;
+}

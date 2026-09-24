@@ -1,0 +1,360 @@
+/* =========================================================
+   COMPONENTS
+   Reusable pieces. Each one matches a component in Figma.
+   Before adding a new class, check if one here already does
+   the job.
+   ========================================================= */
+
+/* ---------- Logo (Figma: Logo) ---------- */
+.logo {
+  font-weight: 800;
+  font-size: var(--font-size-lg);
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* ---------- Back link (Figma: Nav / Back) ---------- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---------- Progress (Figma: Stepper) ---------- */
+.progress {
+  margin-bottom: var(--space-3);
+}
+
+.progress-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.progress-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.progress-bar span {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-border);
+}
+
+.progress-bar span.is-done {
+  background: var(--color-primary);
+}
+
+/* ---------- Intro text under a page title ---------- */
+.lede {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+/* ---------- Button (Figma: Button / Primary, Secondary) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-target);
+  padding: 0 var(--space-3);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary-tint);
+}
+
+/* Modifier: full-width button, used for the main action on each step */
+.btn-block {
+  width: 100%;
+}
+
+/* A quiet text link that sits centred under a main button */
+.text-action {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  padding: var(--space-2) 0;
+}
+
+/* ---------- Choice card (Figma: Radio card / Default, Selected) ---------- */
+.choice-group {
+  border: 0;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  display: grid;
+  gap: var(--space-1);
+}
+
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: var(--tap-target);
+  padding: 12px var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+
+.choice input {
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  flex-shrink: 0;
+  accent-color: var(--color-primary);
+}
+
+.choice-title {
+  display: block;
+  font-weight: 600;
+}
+
+.choice-hint {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.choice:hover {
+  border-color: var(--color-primary);
+}
+
+/* Selected state is pure CSS: :has() checks if the radio inside is checked */
+.choice:has(input:checked) {
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary-tint);
+  padding: 11px 15px; /* 1px less, so the thicker border doesn't make it jump */
+}
+
+/* ---------- Notice (Figma: Notice / Urgent, Success) ---------- */
+.notice {
+  border-radius: var(--radius-sm);
+  padding: var(--space-2);
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+.notice p:last-child {
+  margin-bottom: 0;
+}
+
+.notice-title {
+  font-weight: 700;
+  font-size: var(--font-size-md);
+  margin-bottom: 4px;
+}
+
+.notice-urgent {
+  background: var(--color-urgent-bg);
+  border-left: 4px solid var(--color-urgent-line);
+  color: var(--color-urgent-text);
+}
+
+.notice-urgent a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.notice-success {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+/* ---------- Form field (Figma: Input / Default) ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: var(--space-3);
+}
+
+.field label,
+.field-label {
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  font: inherit;
+  min-height: var(--tap-target);
+  padding: 10px 12px;
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field-hint {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Photo upload (Figma: Upload) ---------- */
+.upload {
+  border: 1px dashed var(--color-primary-line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+/* The real file input stays in the page for keyboards and screen readers,
+   but the styled label is what people see and click */
+.upload input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.upload input[type="file"]:focus-visible + .btn {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* ---------- Divider with text (Figma: Divider / Or) ---------- */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin: var(--space-3) 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Summary block (Figma: Review / Section) ---------- */
+.summary {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-2) 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px var(--space-2);
+}
+
+.summary:last-of-type {
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-3);
+}
+
+.summary-heading {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+.summary-content {
+  grid-column: 1;
+  margin: 0;
+}
+
+.summary-edit {
+  grid-row: 1;
+  grid-column: 2;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+/* ---------- Reference code (Figma: Confirmation / Reference) ---------- */
+.reference {
+  background: var(--color-primary-tint);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+
+.reference-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.reference-code {
+  font-size: var(--font-size-xxl);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* ---------- Status badge (Figma: Badge / Received) ---------- */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+/* ---------- Numbered next steps (Figma: List / Steps) ---------- */
+.next-steps {
+  padding-left: 1.25rem;
+  margin: 0 0 var(--space-3);
+}
+
+.next-steps li {
+  margin-bottom: var(--space-1);
+}
+
+.button-stack {
+  display: grid;
+  gap: var(--space-1);
+}
+
+/* ---------- Prose (long-form text pages like privacy.html) ---------- */
+.prose h2 {
+  margin-top: var(--space-3);
+}
+
+.prose {
+  margin-bottom: var(--space-3);
+}

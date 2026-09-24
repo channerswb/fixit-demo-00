@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What needs fixing? | FixIt</title>
+  <!-- Font: Inter, an open typeface designed for screens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <!-- Load order matters: tokens first, components last -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="logo" href="index.html">FixIt</a>
+      <a class="site-header-end" href="my-reports.html">My reports</a>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <!-- Progress: the text is for everyone, the bar is decoration so screen readers skip it -->
+    <div class="progress">
+      <p class="progress-label">Step 1 of 4: Issue</p>
+      <div class="progress-bar" aria-hidden="true">
+        <span class="is-done"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <h1>What needs fixing?</h1>
+    <p class="lede">Help look after our shared spaces. Choose the closest issue type.</p>
+
+    <!-- Moved above the options: someone in danger should see this before anything else -->
+    <div class="notice notice-urgent" role="note">
+      <p class="notice-title">Is anyone in danger?</p>
+      <p>Call <a href="tel:111">111</a> now. For urgent hazards like fallen trees or flooding, use the <a href="urgent-contacts.html">Council urgent contacts</a>.</p>
+    </div>
+
+    <form action="details.html">
+      <!-- fieldset + legend groups the radios so screen readers read the question with each option -->
+      <fieldset class="choice-group">
+        <legend class="visually-hidden">Issue type</legend>
+
+        <label class="choice">
+          <input type="radio" name="issue-type" value="graffiti" required>
+          <span><span class="choice-title">Graffiti</span></span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="issue-type" value="road">
+          <span><span class="choice-title">Pothole or road damage</span></span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="issue-type" value="streetlight">
+          <span><span class="choice-title">Broken streetlight</span></span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="issue-type" value="rubbish">
+          <span><span class="choice-title">Rubbish or illegal dumping</span></span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="issue-type" value="other">
+          <span>
+            <span class="choice-title">Other community issue</span>
+            <span class="choice-hint">Bins, playgrounds, drains, trees or trolleys</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <button type="submit" class="btn btn-primary btn-block">Continue</button>
+    </form>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

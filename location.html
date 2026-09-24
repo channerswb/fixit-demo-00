@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where is the issue? | FixIt</title>
+  <!-- Font: Inter, an open typeface designed for screens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <!-- Load order matters: tokens first, components last -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="back-link" href="details.html">&larr; Back</a>
+      <a class="logo" href="index.html">FixIt</a>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <!-- Progress: the text is for everyone, the bar is decoration so screen readers skip it -->
+    <div class="progress">
+      <p class="progress-label">Step 3 of 4: Location</p>
+      <div class="progress-bar" aria-hidden="true">
+        <span class="is-done"></span>
+        <span class="is-done"></span>
+        <span class="is-done"></span>
+        <span></span>
+      </div>
+    </div>
+
+    <h1>Where is the issue?</h1>
+    <p class="lede">Pinpoint the spot so the team can find it.</p>
+
+    <form action="contact.html">
+      <!-- Not wired up yet. A button like this is where a Web API could come in. -->
+      <button type="button" class="btn btn-secondary btn-block">Use my current location</button>
+
+      <p class="divider">or type it in</p>
+
+      <div class="field">
+        <label for="address">Street address or landmark</label>
+        <input type="text" id="address" name="address" autocomplete="street-address"
+               aria-describedby="address-hint" required>
+        <p id="address-hint" class="field-hint">For example: 24 Queen Street, Auckland Central</p>
+      </div>
+
+      <div class="field">
+        <label for="landmark">Nearby landmark <span class="optional">(optional)</span></label>
+        <input type="text" id="landmark" name="landmark" aria-describedby="landmark-hint">
+        <p id="landmark-hint" class="field-hint">For example: beside the bus stop</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Continue</button>
+    </form>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

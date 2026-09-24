@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Check your report | FixIt</title>
+  <!-- Font: Inter, an open typeface designed for screens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <!-- Load order matters: tokens first, components last -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="back-link" href="contact.html">&larr; Back</a>
+      <a class="logo" href="index.html">FixIt</a>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <!-- Progress: the text is for everyone, the bar is decoration so screen readers skip it -->
+    <div class="progress">
+      <p class="progress-label">Last step: check before sending</p>
+      <div class="progress-bar" aria-hidden="true">
+        <span class="is-done"></span>
+        <span class="is-done"></span>
+        <span class="is-done"></span>
+        <span class="is-done"></span>
+      </div>
+    </div>
+
+    <h1>Check your report</h1>
+    <p class="lede">Make sure the team has enough detail to act.</p>
+
+    <!-- Each section repeats the same pattern: heading, content, edit link.
+         The hidden text makes each "Edit" link make sense out of context. -->
+    <section class="summary" aria-labelledby="sum-issue">
+      <h2 class="summary-heading" id="sum-issue">Issue</h2>
+      <p class="summary-content">Broken streetlight</p>
+      <a class="summary-edit" href="index.html">Edit<span class="visually-hidden"> issue type</span></a>
+    </section>
+
+    <section class="summary" aria-labelledby="sum-details">
+      <h2 class="summary-heading" id="sum-details">Details</h2>
+      <p class="summary-content">The streetlight outside number 24 is flickering after dark. No photo added.</p>
+      <a class="summary-edit" href="details.html">Edit<span class="visually-hidden"> description or photo</span></a>
+    </section>
+
+    <section class="summary" aria-labelledby="sum-location">
+      <h2 class="summary-heading" id="sum-location">Location</h2>
+      <p class="summary-content">24 Queen Street, Auckland Central<br>Beside the bus stop</p>
+      <a class="summary-edit" href="location.html">Edit<span class="visually-hidden"> location</span></a>
+    </section>
+
+    <section class="summary" aria-labelledby="sum-contact">
+      <h2 class="summary-heading" id="sum-contact">Updates</h2>
+      <p class="summary-content">By email to jessica@example.com</p>
+      <a class="summary-edit" href="contact.html">Edit<span class="visually-hidden"> contact choice</span></a>
+    </section>
+
+    <form action="confirmation.html">
+      <button type="submit" class="btn btn-primary btn-block">Send report</button>
+    </form>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

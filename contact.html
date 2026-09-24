@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How can Council follow up? | FixIt</title>
+  <!-- Font: Inter, an open typeface designed for screens -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <!-- Load order matters: tokens first, components last -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="back-link" href="location.html">&larr; Back</a>
+      <a class="logo" href="index.html">FixIt</a>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <!-- Progress: the text is for everyone, the bar is decoration so screen readers skip it -->
+    <div class="progress">
+      <p class="progress-label">Step 4 of 4: Contact</p>
+      <div class="progress-bar" aria-hidden="true">
+        <span class="is-done"></span>
+        <span class="is-done"></span>
+        <span class="is-done"></span>
+        <span class="is-done"></span>
+      </div>
+    </div>
+
+    <h1>How can Council follow up?</h1>
+    <p class="lede">With your email, the team can send updates or ask a question.</p>
+
+    <form action="review.html">
+      <fieldset class="choice-group">
+        <legend class="visually-hidden">Contact choice</legend>
+
+        <label class="choice">
+          <input type="radio" name="contact-choice" value="share" checked>
+          <span>
+            <span class="choice-title">Share my contact details</span>
+            <span class="choice-hint">Get updates by email</span>
+          </span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="contact-choice" value="anonymous">
+          <span>
+            <span class="choice-title">Report anonymously</span>
+            <span class="choice-hint">No updates, and it won't appear in My reports</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <div class="field">
+        <label for="full-name">Full name <span class="optional">(optional)</span></label>
+        <input type="text" id="full-name" name="full-name" autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-hint">
+        <p id="email-hint" class="field-hint">Only used for this report. Not needed if you report anonymously.</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Check my report</button>
+      <a class="text-action" href="privacy.html">How Council uses your details</a>
+    </form>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
